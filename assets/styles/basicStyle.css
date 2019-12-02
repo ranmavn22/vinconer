@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'lora';
+  src:  url(Lora-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src:  url(Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src:  url(Montserrat-Light.ttf);
+  font-weight:100;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src:  url(Montserrat-Black.ttf);
+  font-weight:bold;
+}
+*, html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; background: transparent; text-decoration:none; list-style:none; font-family: 'montserrat'; font-size:14px; font-weight:100;}
+h1, h2, h3, h4, h5, h6{font-family: 'lora';}
+header, section, footer, aside, nav, main, article, figure{ display:block;}
+
+ol, ul { /*list-style: none;*/ }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+/* remember to define focus styles!*/
+:focus { outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* clear fix */
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+
+.clearfix { display: inline-block; }
+
+html[xmlns] .clearfix { display: block; }
+
+* html .clearfix { height: 1%; }
+
+.clearDiv{ clear:both;}
+.wrapper1k2{ max-width:1280px; margin:0 auto; position:relative;}
+.icon{ display:inline-block; background-image:url(../images/icon_vinconer.png); background-repeat:no-repeat; background-size:500px auto;}
+
+body {}
+
+#wrapper{}
+
+header, header .wrapper1k2{ height:110px;}
+header .logo{ float:left; position:absolute; z-index:2;}
+header .logo img{ display:block; position:relative; top:9px;}
+header .navBtn{}
+header .navBtn span{}
+header .searchBtn{ width:29px; height:26px; position:absolute; top:40px; right:0;}
+header .searchBox{ background-color:#fff; position:absolute; bottom:31px; right:35px; z-index:3; height:32px; padding:8px; border-radius:2px; border-left:solid 20px #fff; display:none;}
+header .searchBox input{ float:left; display:block; width:240px; height:30px; border:solid 1px #e9eaef; margin:0 5px 0 0; text-indent:15px;}
+header .searchBox .submitBtn{ display:block; float:right; height:32px; background-color:#5ba446; font-size:12px; color:#fff; font-weight: normal; text-align:center; line-height:32px; padding:0 10px;}
+
+nav{ position:absolute; top:0; right:50%; height:0; max-width:1280px; transform:translateX(50%); text-align:right; width:100%;}
+nav ul{ font-size:0;}
+nav li{ display:inline-block;}
+nav a{ display:inline-block; line-height:110px; font-size:16px; color:#000; margin:0 25px 0 0; height:105px; transition:all 0.2s; border-bottom:solid 2px #fff;}
+nav li:last-child a{margin:0 55px 0 0;}
+nav a:hover{ color:#5ba446; border-bottom:solid 2px #5ba446;}
+nav a.active{ border-bottom:solid 5px #5ba446; color:#5ba446;}
+
+main{}
+main .slide{ padding:0 0 3px; border-bottom:solid 5px #2b398e;}
+main .slide img{ display:block; width:100%; height:auto;}
+main .sanpham{ padding:80px 0 100px; text-align:center}
+main .sanpham h2{ font-size:36px; margin:0 0 50px;}
+main .sanpham .dssp{ font-size:0; margin:0 0 80px;}
+main .sanpham .dssp li{ display:inline-block;}
+main .sanpham .dssp li a{ display:block; margin:0 30px;}
+main .sanpham .dssp li a img{ display:block; max-width:100%; height:auto; margin:0 0 20px; transition:all 0.2s;}
+main .sanpham .dssp li a:hover img{ transform:scale(1.05);}
+main .sanpham .dssp li a span{ display:block; font-size:18px; text-transform:uppercase; color:#000; transition:all 0.2s;}
+main .sanpham .dssp li a:hover span{ color:#5ba446;}
+main .sanpham .lienhetuvan{ border:solid 1px #e9eaef; max-width:860px; margin:0 auto;}
+main .sanpham .lienhetuvan p{ font-size:16px; padding:35px 20px 0;}
+main .sanpham .lienhetuvan a{ background-color:#5ba446; font-size:18px; color:#fff; font-weight: normal; text-align:center; width:60%; max-width:320px; height:80px; line-height:80px; margin:0 auto; position:relative; top:25px; display:block;}
+main .sanluong{ background-image:url(../images/sanluong_bg.jpg); background-repeat:no-repeat; background-size:100% auto; padding:25px 0 20px; color:#fff;}
+main .sanluong img{ float:right;}
+main .sanluong .mota{ font-size:30px; padding:55px 0 0;}
+main .sanluong .mota span{ display:block; font-weight:bold; font-size:70px; padding:10px 0 0;}
+main .sanluong .mota span span{ display:inline; font-weight:100; font-size:22px; position:relative; padding:0;}
+main .sanluong .mota span span span{ position:absolute; left:0; top:-30px;}
+main .sanluong ul{ position:absolute; bottom:50px;}
+main .sanluong ul li{ display:inline-block; margin:0 60px 0 0;}
+main .sanluong ul li:last-child{margin:0;}
+main .sanluong ul li span{ display:block; background-color:#fff; height:5px; width:80px; margin:0 0 15px;}
+main .sanluong ul li h3{ font-size:20px; margin:0 0 5px;}
+main .sanluong ul li p{ line-height:20px;}
+main .chienluoc{ padding:100px 0 0;}
+main .chienluoc .item{ max-width:640px; margin:0 auto 50px;}
+main .chienluoc .item .icon{ padding:0; width:63px; height:63px; background-position:0 -50px; float:left;}
+main .chienluoc .item .icon.themanh{ background-position:-100px -50px;}
+main .chienluoc .item div{ padding:10px 0 0 80px;}
+main .chienluoc .item div h3{ font-size:24px; margin:0 0 10px;}
+main .chienluoc .item div ul{}
+main .chienluoc .item div ul li{ line-height:24px;}
+main .chienluoc .avachienluoc{ background-color:#29326a; transform:skewY(-10deg); margin:100px 0 0; position:relative; height:500px;}
+main .chienluoc .avachienluoc img{ position:absolute; right:12%; top:-200px; transform: skewY(10deg);}
+main .khachhang{ background-color:#29326a; color:#fff; position:relative; z-index:2; margin: -300px 0 0; padding:0 0 120px;}
+main .khachhang .bg_rong{ border:solid 8px #5ba446; width:364px; height:364px; position:absolute; left:45px;}
+main .khachhang .bg_dac{ width:400px; height:200px; background-color:#5ba446; left:auto; bottom:120px; right:0;}
+main .khachhang h2{ font-size:36px; text-align:center; margin:0 0 15px; padding:10px 0 0; text-indent:80px;}
+main .khachhang .dskhachhang{ max-width:860px; margin:0 auto;}
+main .khachhang .dskhachhang .item{}
+main .khachhang .dskhachhang .item img{ display:block; width:100%; height:auto;}
+main .khachhang .dskhachhang .item h3{ font-size:30px; padding:15px 0 5px;}
+main .khachhang .dskhachhang .item p{ font-size:16px;}
+
+footer{ padding:25px 0 15px;}
+footer .logo{ float:left;}
+footer .logo img{ display:block; width:100px; height:auto;}
+footer .thongtin{ padding:5px 0 0 125px;}
+footer .thongtin h4{ font-size:16px; margin:0 0 6px;}
+footer .thongtin ul{}
+footer .thongtin ul li{}
+footer .thongtin ul li a{ color:#000; transition:all 0.2s;}
+footer .thongtin ul li a:hover{ color:#5ba446;}
+footer .navFooter{ position:absolute; bottom:0; right:0; font-size:0;}
+footer .navFooter li{ display:inline-block;}
+footer .navFooter li a{ font-size:12px; color:#000; margin:0 0 0 15px; transition:all 0.2s;}
+footer .navFooter li a:hover{ color:#5ba446;}
