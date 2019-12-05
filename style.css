@@ -8,3 +8,15 @@
 header .searchBtn{
     z-index: 9;
 }
+
+.tabContent .item{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s all;
+    display: none;
+}
+.tabContent .item.active{
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}

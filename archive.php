@@ -8,74 +8,43 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
+$obj = get_queried_object();
 get_header(); ?>
+    <div class="tintuc">
+        <div class="wrapper1k2">
+            <h1><?php echo $obj->name;?></h1>
+            <div class="dstintuc">
+                <?php
+                $loop = new WP_Query(
+                    array(
+                            'post_type' => 'post',
+                            'posts_per_page' => 9,
+                            'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+                            'category_name' => $obj->slug)
+                );
+                while ($loop->have_posts()) : $loop->the_post();
+                    include __DIR__.'/includes/item_post.php';
+                endwhile; ?>
+            </div>
+            <ul class="paging">
+                    <?php
+                    $big = 999999999; // need an unlikely integer
+                    echo paginate_links(array(
+                        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
+                        'format' => '?paged=%#%',
+                        'mid_size' => 1,
+                        'current' => max(1, get_query_var('paged')),
+                        'total' => $loop->max_num_pages,
+                        'prev_next' => false,
+                    ));
+                    ?>
+            </ul>
+        </div>
+    </div>
 
-	<div id="primary" <?php generate_do_element_classes( 'content' ); ?>>
-		<main id="main" <?php generate_do_element_classes( 'main' ); ?>>
-			<?php
-			/**
-			 * generate_before_main_content hook.
-			 *
-			 * @since 0.1
-			 */
-			do_action( 'generate_before_main_content' );
 
-			if ( have_posts() ) :
 
-				/**
-				 * generate_archive_title hook.
-				 *
-				 * @since 0.1
-				 *
-				 * @hooked generate_archive_title - 10
-				 */
-				do_action( 'generate_archive_title' );
 
-				while ( have_posts() ) : the_post();
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-
-				endwhile;
-
-				/**
-				 * generate_after_loop hook.
-				 *
-				 * @since 2.3
-				 */
-				do_action( 'generate_after_loop' );
-
-				generate_content_nav( 'nav-below' );
-
-			else :
-
-				get_template_part( 'no-results', 'archive' );
-
-			endif;
-
-			/**
-			 * generate_after_main_content hook.
-			 *
-			 * @since 0.1
-			 */
-			do_action( 'generate_after_main_content' );
-			?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-	<?php
-	/**
-	 * generate_after_primary_content_area hook.
-	 *
-	 * @since 2.0
-	 */
-	do_action( 'generate_after_primary_content_area' );
-
-	generate_construct_sidebars();
-
+<?php
 get_footer();

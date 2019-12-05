@@ -61,8 +61,8 @@ header .logo{ float:left; position:absolute; z-index:2;}
 header .logo img{ display:block; position:relative; top:9px;}
 header .navBtn{}
 header .navBtn span{}
-header .searchBtn{ width:29px; height:26px; position:absolute; top:40px; right:0;}
-header .searchBox{ background-color:#fff; position:absolute; bottom:31px; right:35px; z-index:3; height:32px; padding:8px; border-radius:2px; border-left:solid 20px #fff; display:none;}
+header .searchBtn{ width:29px; height:26px; position:absolute; top:42px; right:0; z-index:3;}
+header .searchBox{ background-color:#fff; position:absolute; bottom:31px; right:35px; z-index:3; height:32px; padding:8px; border-radius:2px; border-left:solid 30px #fff; display:none;}
 header .searchBox input{ float:left; display:block; width:240px; height:30px; border:solid 1px #e9eaef; margin:0 5px 0 0; text-indent:15px;}
 header .searchBox .submitBtn{ display:block; float:right; height:32px; background-color:#5ba446; font-size:12px; color:#fff; font-weight: normal; text-align:center; line-height:32px; padding:0 10px;}
 
@@ -72,7 +72,7 @@ nav li{ display:inline-block;}
 nav a{ display:inline-block; line-height:110px; font-size:16px; color:#000; margin:0 25px 0 0; height:105px; transition:all 0.2s; border-bottom:solid 2px #fff;}
 nav li:last-child a{margin:0 55px 0 0;}
 nav a:hover{ color:#5ba446; border-bottom:solid 2px #5ba446;}
-nav a.active{ border-bottom:solid 5px #5ba446; color:#5ba446;}
+nav .current-menu-item a{ border-bottom:solid 5px #5ba446; color:#5ba446;}
 
 main{}
 main .slide{ padding:0 0 3px; border-bottom:solid 5px #2b398e;}
@@ -82,7 +82,7 @@ main .sanpham h2{ font-size:36px; margin:0 0 50px;}
 main .sanpham .dssp{ font-size:0; margin:0 0 80px;}
 main .sanpham .dssp li{ display:inline-block;}
 main .sanpham .dssp li a{ display:block; margin:0 30px;}
-main .sanpham .dssp li a img{ display:block; max-width:100%; height:auto; margin:0 0 20px; transition:all 0.2s;}
+main .sanpham .dssp li a img{ display:block; max-width:100%; height:auto; margin:0 0 25px; transition:all 0.2s;}
 main .sanpham .dssp li a:hover img{ transform:scale(1.05);}
 main .sanpham .dssp li a span{ display:block; font-size:18px; text-transform:uppercase; color:#000; transition:all 0.2s;}
 main .sanpham .dssp li a:hover span{ color:#5ba446;}
@@ -92,26 +92,29 @@ main .sanpham .lienhetuvan a{ background-color:#5ba446; font-size:18px; color:#f
 main .sanluong{ background-image:url(../images/sanluong_bg.jpg); background-repeat:no-repeat; background-size:100% auto; padding:25px 0 20px; color:#fff;}
 main .sanluong img{ float:right;}
 main .sanluong .mota{ font-size:30px; padding:55px 0 0;}
-main .sanluong .mota span{ display:block; font-weight:bold; font-size:70px; padding:10px 0 0;}
-main .sanluong .mota span span{ display:inline; font-weight:100; font-size:22px; position:relative; padding:0;}
-main .sanluong .mota span span span{ position:absolute; left:0; top:-30px;}
+main .sanluong .mota strong{ display:block; font-weight:bold; font-size:70px; padding:10px 0 0;}
+main .sanluong .mota strong strong{ display:inline; font-weight:100; font-size:22px; position:relative; padding:0;}
+main .sanluong .mota strong strong strong{ position:absolute; left:0; top:-30px;}
 main .sanluong ul{ position:absolute; bottom:50px;}
 main .sanluong ul li{ display:inline-block; margin:0 60px 0 0;}
 main .sanluong ul li:last-child{margin:0;}
-main .sanluong ul li span{ display:block; background-color:#fff; height:5px; width:80px; margin:0 0 15px;}
+main .sanluong ul li:before{content: ""; display:block; background-color:#fff; height:5px; width:80px; margin:0 0 15px;}
 main .sanluong ul li h3{ font-size:20px; margin:0 0 5px;}
 main .sanluong ul li p{ line-height:20px;}
 main .chienluoc{ padding:100px 0 0;}
 main .chienluoc .item{ max-width:640px; margin:0 auto 50px;}
-main .chienluoc .item .icon{ padding:0; width:63px; height:63px; background-position:0 -50px; float:left;}
-main .chienluoc .item .icon.themanh{ background-position:-100px -50px;}
+main .chienluoc .item .chienluoc{position: relative}
+main .chienluoc .item .chienluoc:before{content:"";background-image: url(../images/icon_vinconer.png); position: absolute; left: 0; top: 0; padding:0; width:63px; height:63px; background-position:0 -50px; float:left;}
+main .chienluoc .item .icon.themanh{display: block; background-position:-100px -50px;}
 main .chienluoc .item div{ padding:10px 0 0 80px;}
 main .chienluoc .item div h3{ font-size:24px; margin:0 0 10px;}
 main .chienluoc .item div ul{}
 main .chienluoc .item div ul li{ line-height:24px;}
-main .chienluoc .avachienluoc{ background-color:#29326a; transform:skewY(-10deg); margin:100px 0 0; position:relative; height:500px;}
-main .chienluoc .avachienluoc img{ position:absolute; right:12%; top:-200px; transform: skewY(10deg);}
-main .khachhang{ background-color:#29326a; color:#fff; position:relative; z-index:2; margin: -300px 0 0; padding:0 0 120px;}
+main .chienluoc .avachienluoc{ margin:-100px 0 0; position:relative; height:250px; z-index:-1; padding:80px 0 0;}
+main .chienluoc2 .avachienluoc{ height:68px; z-index:2;}
+main .chienluoc .avachienluoc div{ background-color:#29326a; transform:skewY(-10deg); margin:100px 0 0; position:relative; height:500px;}
+main .chienluoc .avachienluoc img{ position:absolute; right:12%; top:-120px;}
+main .khachhang{ background-color:#29326a; color:#fff; position:relative; padding:100px 0 120px;}
 main .khachhang .bg_rong{ border:solid 8px #5ba446; width:364px; height:364px; position:absolute; left:45px;}
 main .khachhang .bg_dac{ width:400px; height:200px; background-color:#5ba446; left:auto; bottom:120px; right:0;}
 main .khachhang h2{ font-size:36px; text-align:center; margin:0 0 15px; padding:10px 0 0; text-indent:80px;}
@@ -121,7 +124,7 @@ main .khachhang .dskhachhang .item img{ display:block; width:100%; height:auto;}
 main .khachhang .dskhachhang .item h3{ font-size:30px; padding:15px 0 5px;}
 main .khachhang .dskhachhang .item p{ font-size:16px;}
 
-footer{ padding:25px 0 15px;}
+footer{ padding:25px 0 15px;border-top:solid 1px #e9eaef;}
 footer .logo{ float:left;}
 footer .logo img{ display:block; width:100px; height:auto;}
 footer .thongtin{ padding:5px 0 0 125px;}
@@ -134,3 +137,170 @@ footer .navFooter{ position:absolute; bottom:0; right:0; font-size:0;}
 footer .navFooter li{ display:inline-block;}
 footer .navFooter li a{ font-size:12px; color:#000; margin:0 0 0 15px; transition:all 0.2s;}
 footer .navFooter li a:hover{ color:#5ba446;}
+
+
+
+
+
+main .gioithieu{ background-image:url(../images/gioithieu_bg.png); background-repeat:no-repeat; background-size:100% auto; padding:150px 0 100px; margin:0 0 -100px;}
+main .detail{ max-width:640px; margin:0 auto;}
+main .detail h1{ font-size:24px; margin:0 0 10px;}
+main .detail .noidung{ line-height:24px;}
+
+
+
+
+
+main .sanpham .dssp#subNavsp{ margin:0 0 5px; border-bottom:solid 5px #e8e9ee;}
+main .sanpham .dssp#subNavsp li{vertical-align:top;position:relative;}
+main .sanpham .dssp#subNavsp li a{ opacity:0.5; transform:scale(0.8); width:202px; margin:0; transition:all 0.2s; height:300px;}
+main .sanpham .dssp#subNavsp li a:hover{ opacity:1;}
+main .sanpham .dssp#subNavsp li.active a{ opacity:1; transform:scale(1); margin:0 20px;}
+main .sanpham .dssp#subNavsp li a img{ width:170px; margin:0 auto 25px;}
+main .sanpham .dssp#subNavsp li .icon{ width:50px; height:25px; background-position:-50px -150px; position:absolute; bottom:0; left:50%; transform:translateX(-50%); opacity:0;}
+main .sanpham .dssp#subNavsp li.active .icon{opacity:1;}
+main .sanpham .productDetails{ background-color:#f3f4f6; padding:60px 0 100px; margin:0 0 -100px; text-align:left;}
+main .sanpham .productDetails .left{ width:calc(50% - 40px); float:left;}
+main .sanpham .productDetails .left .anhto{ margin:0 0 15px;}
+main .sanpham .productDetails .left img{ display:block; max-width:100%; height:auto;}
+main .sanpham .productDetails .left ul{ font-size:0;}
+main .sanpham .productDetails .left ul li{ display:inline-block; width:calc(25% - 12px); margin:0 0 0 16px; overflow:hidden;}
+main .sanpham .productDetails .left ul li:first-child{ margin:0;}
+main .sanpham .productDetails .left ul li a{ display:block;}
+main .sanpham .productDetails .left ul li a img{ transition:all 0.5s; opacity:0.5;}
+main .sanpham .productDetails .left ul li a:hover img{ transform:scale(1.1); opacity:1;}
+main .sanpham .productDetails .left ul li a.active img{ opacity:1;}
+main .sanpham .productDetails .right{ width:50%; float:right;}
+main .sanpham .productDetails .right h1{ font-size:30px; margin:0 0 25px;}
+main .sanpham .productDetails .right .lienhe{ margin:0 0 45px; text-align:left; padding:0;}
+main .sanpham .productDetails .right .lienhe p{ line-height:20px; margin:0 0 10px;}
+main .sanpham .productDetails .right .lienhe .dathangBtn{ background-color:#5ba446; font-size:18px; color:#fff; font-weight: normal; text-align:center; width:280px; height:60px; line-height:60px; display:block;}
+main .sanpham .productDetails .right .thongtinsp{}
+main .sanpham .productDetails .right .thongtinsp ul{ font-size:0; border-bottom:solid 2px #e5e8f0; height:25px;}
+main .sanpham .productDetails .right .thongtinsp ul li{ display:inline-block;}
+main .sanpham .productDetails .right .thongtinsp ul li a{ font-size:12px; color:#000; font-weight:normal; height:25px; line-height:25px; text-transform:uppercase; margin:0 25px 0 0; border-bottom:solid 2px #e5e8f0; display:block; transition:all 0.2s;}
+main .sanpham .productDetails .right .thongtinsp ul li a:hover{ color:#5ba446;}
+main .sanpham .productDetails .right .thongtinsp ul li a.active{ border-color:#5ba446; color:#5ba446;}
+main .sanpham .productDetails .right .thongtinsp .chitiet{ padding:25px 0 0 5px; line-height:22px; display:none;}
+main .sanpham .productDetails .right .thongtinsp .chitiet#box1{ display:block;}
+main .sanpham .productDetails .right .thongtinsp .chitiet p{}
+
+
+
+main .dailykhohang{ padding:100px 0 90px;}
+main .dailykhohang .hethong{}
+main .dailykhohang .hethong .left{ width:31%; float:left;}
+main .dailykhohang .hethong .left img{ display:block; max-width:100%; height:auto;}
+main .dailykhohang .hethong .map{ float:right; width:59%;}
+main .dailykhohang .hethong .map img{ position:absolute;}
+main .dailykhohang .hethong .map ul{ padding:0 0 0 392px; position:relative;}
+main .dailykhohang .hethong .map ul li{ position:absolute; top:30px;}
+main .dailykhohang .hethong .map ul li:nth-child(2){ top:182px;}
+main .dailykhohang .hethong .map ul li:nth-child(3){ top:405px;}
+main .dailykhohang .hethong .map ul li:nth-child(4){ top:591px;}
+main .dailykhohang .hethong .map ul li h3{ font-size:20px; margin:0 0 5px;}
+main .dailykhohang .hethong .map ul li p{}
+main .boxlienhe{ max-width:848px; margin:0 auto 80px; text-align:center; padding:5px;border:solid 1px #e9eaef;}
+main .boxlienhe .borderlh{ height:10px; background-image:url(../images/lienhe_border.png); background-repeat:repeat-x;}
+main .boxlienhe .tuvan{ padding:40px 80px 50px;}
+main .boxlienhe .tuvan h3{ font-size:20px; margin:0 0 15px;}
+main .boxlienhe .tuvan .mota{ margin:0 0 45px;}
+main .boxlienhe .tuvan form{}
+main form .boxlienhe .tuvan input{border:solid 1px #e9eaef; display:block; margin:0 auto 20px; text-align:center; width:478px; height:48px; font-size:16px;}
+main form .boxlienhe .tuvan textarea{border:solid 1px #e9eaef; display:block; margin:0 auto 20px; text-align:center; resize:none; width:478px; padding:10px 0 0; height:140px;}
+main form .boxlienhe .tuvan .submitBtn{ background-color:#5ba446; font-size:18px; color:#fff; font-weight: normal; text-align:center; width:478px; height:50px; line-height:50px; display:block; margin:0 auto;}
+
+
+
+
+main .congtrinh{ padding:80px 0;}
+main .congtrinh h1{ font-size:60px; opacity:0.2; margin:0 auto 50px;}
+main .congtrinh .dscongtrinh{}
+main .congtrinh .dscongtrinh .item{ padding:60px 0; position:relative;}
+main .congtrinh .dscongtrinh .item .dac{ width:400px; height:200px; background-color:#5ba446; position:absolute; top:0; right:0;}
+main .congtrinh .dscongtrinh .item .dac2{ top:auto; right:auto; bottom:0; left:0;}
+main .congtrinh .dscongtrinh .item:nth-child(even) .dac{ right:auto; left:0}
+main .congtrinh .dscongtrinh .item:nth-child(even) .dac2{ right:0; left:auto;}
+main .congtrinh .dscongtrinh .item .rong{ border:solid 8px #5ba446; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:400px; height:400px;}
+main .congtrinh .dscongtrinh .item .congtrinh1{ position:relative;}
+main .congtrinh .dscongtrinh .item .congtrinh1:first-child{ margin:0 0 50px;}
+main .congtrinh .dscongtrinh .item .congtrinh1 img{ width:58%; display:block; height:auto; float:right;}
+main .congtrinh .dscongtrinh .item .congtrinh1 .noidung{ position:absolute; bottom:235px; text-align:right; width:calc(42% - 50px);}
+main .congtrinh .dscongtrinh .item .congtrinh1:nth-child(even) img, main .congtrinh .dscongtrinh .item:nth-child(even) .congtrinh1 img{float:left;}
+main .congtrinh .dscongtrinh .item .congtrinh1:nth-child(even) .noidung, main .congtrinh .dscongtrinh .item:nth-child(even) .congtrinh1 .noidung{ bottom:auto; top:235px; text-align:left; right:0;}
+main .congtrinh .dscongtrinh .item:nth-child(even) .congtrinh1 .noidung{ top:auto; bottom:235px;}
+main .congtrinh .dscongtrinh .item:nth-child(even) .congtrinh1:nth-child(even) img{float:right;}
+main .congtrinh .dscongtrinh .item:nth-child(even) .congtrinh1:nth-child(even) .noidung{ top:235px; bottom:auto; text-align:right; right:auto; left:0;}
+main .congtrinh .dscongtrinh .item .congtrinh1 .noidung h3{ font-size:30px;}
+main .congtrinh .dscongtrinh .item .congtrinh1 .noidung p{ font-size:16px;}
+
+
+
+
+
+main .tintuc{ padding:80px 0;}
+main .tintuc h1{ text-align:center; font-size:36px; margin:0 0 50px;}
+main .tintuc .dstintuc{ font-size:0; margin:0 -20px;}
+main .tintuc .dstintuc .item{ display:inline-block; vertical-align:top; width:calc(33.333% - 40px); margin:0 20px 50px;}
+main .tintuc .dstintuc .item .imgBox{ display:block; margin:0 0 25px; overflow:hidden;}
+main .tintuc .dstintuc .item .imgBox img{ display:block; width:100%; height:auto; transition:all 0.5s;}
+main .tintuc .dstintuc .item .imgBox:hover img{ transform:scale(1.05);}
+main .tintuc .dstintuc .item .noidung{}
+main .tintuc .dstintuc .item .noidung .time{ color:#adadad; font-size:12px;}
+main .tintuc .dstintuc .item .noidung h2{}
+main .tintuc .dstintuc .item .noidung h2 a{ margin:0 0 10px; display:block;font-family: 'lora'; font-size:18px; color:#000; transition:all 0.2s;}
+main .tintuc .dstintuc .item .noidung h2 a:hover{color:#5ba446;}
+main .tintuc .dstintuc .item .noidung .mota{}
+.paging{ text-align:center; font-size:0;}
+.paging li{ display:inline-block;}
+.paging a,.paging  span{ display:inline-block;font-family: 'lora'; font-size:18px; color:#bcbcbc; border:solid 1px #e1e1e1; width:43px; height:43px; border-radius:50%; line-height:43px; margin:0 5px; transition:all 0.2s;}
+.paging a:hover{ color:#999; border-color:#999;}
+.paging a.active,.paging .current{ color:#5ba446; border-color:#5ba446;}
+
+
+
+
+main .tintuc .detail{}
+main .tintuc .detail .time{ color:#adadad; font-size:12px;}
+main .tintuc .detail h1{ text-align:left; font-size:24px; margin:0 0 25px;}
+main .tintuc .detail .motangan{ font-weight:normal; line-height:24px; margin:0 0 20px;}
+main .tintuc .detail .noidung{ line-height:24px; margin:0 0 50px;}
+main .tintuc .detail .noidung img{ display:block; margin:0 auto 30px; max-width:100%; height:auto;}
+main .tintuc .detail .tinlienquan{ margin:0 0 80px;}
+main .tintuc .detail .tinlienquan h2{ width:100px; border-top:solid 5px #000; font-size:14px; padding:5px 0 0; margin:0 0 12px;}
+main .tintuc .detail .tinlienquan ul{}
+main .tintuc .detail .tinlienquan ul li{}
+main .tintuc .detail .tinlienquan ul li a{ display:block; color:#303c85; padding:3px 0; transition:all 0.2s;}
+main .tintuc .detail .tinlienquan ul li a:hover{color:#5ba446; text-indent:5px;}
+
+
+
+
+main .tuyendung{ padding:80px 0;}
+main .tuyendung h1{ font-size:36px; text-align:center; margin:0 0 50px;}
+main .tuyendung .dstuyendung{ max-width:860px; margin:0 auto;}
+main .tuyendung .dstuyendung .item{border:solid 1px #e9eaef; margin:0 0 20px;}
+main .tuyendung .dstuyendung .item .imgBox{ float:left; width:252px;}
+main .tuyendung .dstuyendung .item .imgBox img{ display:block; width:100%; height:auto;}
+main .tuyendung .dstuyendung .item .noidung{ padding:35px 0 0 282px;}
+main .tuyendung .dstuyendung .item .noidung h2{ font-size:20px; margin:0 0 10px;}
+main .tuyendung .dstuyendung .item .noidung div{ padding:0 0 0 20px; line-height:20px;}
+main .tuyendung .paging{}
+
+
+
+main .mapLienhe{ position:relative; overflow:hidden;}
+main .mapLienhe .bongdo{ box-shadow:0 0 14px #000; position: absolute; top:-1px; left:0; width:100%;height:1px;}
+main .mapLienhe .bongdo2{ top:auto; bottom:-1px;}
+main .lienhe{ text-align:center; padding:80px 0 50px;}
+main .lienhe h1{ font-size:24px; margin:0 0 5px;}
+main .lienhe p{}
+main .lienhe p a{ color:#000; transition:all 0.2s;}
+main .lienhe p a:hover{ color:#5ba446;}
+main .dskho{ padding:0 0 80px;}
+main .dskho2{ margin:0 -20px; font-size:0;}
+main .dskho .item{ display:inline-block; vertical-align:top; width:calc(33.333% - 40px); margin:0 20px;}
+main .dskho .item h3{ font-size:16px; text-transform:uppercase; color:#5ba446; padding:0 0 5px; border-bottom:solid 5px #e5e8f0; margin:0 0 25px;}
+main .dskho .item div{ margin:0 0 15px;}
+main .dskho .item div h4{ font-size:16px; margin:0 0 5px;}
+

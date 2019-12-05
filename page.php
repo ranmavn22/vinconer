@@ -10,21 +10,13 @@
  * @package GeneratePress
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
 get_header(); ?>
-
-	<div id="primary" <?php generate_do_element_classes( 'content' ); ?>>
-		<main id="main" <?php generate_do_element_classes( 'main' ); ?>>
-			<?php
-			while ( have_posts() ) : the_post();
-
-				the_content();
-
-			endwhile; ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+<?php
+while (have_posts()) : the_post();
+    the_content();
+endwhile; ?>
 <?php get_footer();

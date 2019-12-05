@@ -36,8 +36,3 @@ if ( ! defined( 'ABSPATH' ) ) {
     </nav>
     <div id="primary" <?php generate_do_element_classes( 'content' ); ?>>
         <main id="main" <?php generate_do_element_classes( 'main' ); ?>>
-            <div class="slide">
-                <img src="http://localhost/vinconer/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
-                <img src="http://localhost/vinconer/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
-                <img src="http://localhost/vinconer/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
-            </div>
