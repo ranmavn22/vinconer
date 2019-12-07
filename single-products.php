@@ -50,7 +50,7 @@ while (have_posts()) : the_post();
                             <h1><?php echo $post->post_title ?></h1>
                             <div class="lienhe">
                                 <p>Quý Khách vui lòng liên hệ với chúng tôi để được tư vấn và phục vụ một cách tốt nhất. <br/>Hotline: 0982 909 199</p>
-                                <a href="javascript:;" class="dathangBtn">Liên hệ đặt hàng</a>
+                                <a href="/lien-he/" class="dathangBtn">Liên hệ đặt hàng</a>
                             </div><!--end lienhe-->
                             <div class="thongtinsp">
                                 <ul>

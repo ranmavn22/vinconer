@@ -5,75 +5,38 @@
  * @package GeneratePress
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
 get_header(); ?>
+    <div class="tuyendung">
+        <h1><?php printf(__('Tìm kiếm: %s', 'generatepress'), '' . get_search_query() . ''); ?></h1>
+        <?php if (have_posts()) : ?>
+            <div class="dstuyendung">
+                <?php while (have_posts()) : the_post();
+                    ?>
+                    <div class="item">
+                        <div class="imgBox">
+                            <a href="<?php echo get_permalink($post->ID)?>" title="<?php the_title() ?>"><?php echo get_the_post_thumbnail($post->ID, 'square_thumbnail', array('alt' => get_the_title())) ?></a>
+                        </div>
+                        <div class="noidung">
+                            <h2><a href="<?php echo get_permalink($post->ID)?>" title="<?php the_title() ?>"><?php the_title() ?></a></h2>
+                            <div>
+                                <p><?php echo wp_trim_words($post->post_content,20)?></p>
+                            </div>
+                        </div>
+                        <div class="clearDiv"></div>
+                    </div><!--end item-->
+                <?php
+                endwhile; ?>
+            </div>
+        <?php
+        else :
+            echo "<p class='textCenter'>Không tìm thấy kết quả</p>";
+        endif;
+        ?>
+    </div>
 
-	<div id="primary" <?php generate_do_element_classes( 'content' ); ?>>
-		<main id="main" <?php generate_do_element_classes( 'main' ); ?>>
-			<?php
-			/**
-			 * generate_before_main_content hook.
-			 *
-			 * @since 0.1
-			 */
-			do_action( 'generate_before_main_content' );
-
-			if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title">
-						<?php
-						printf( // WPCS: XSS ok.
-							/* translators: 1: Search query name */
-							__( 'Search Results for: %s', 'generatepress' ),
-							'<span>' . get_search_query() . '</span>'
-						);
-						?>
-					</h1>
-				</header><!-- .page-header -->
-
-				<?php while ( have_posts() ) : the_post();
-
-					get_template_part( 'content', 'search' );
-
-				endwhile;
-
-				/**
-				 * generate_after_loop hook.
-				 *
-				 * @since 2.3
-				 */
-				do_action( 'generate_after_loop' );
-
-				generate_content_nav( 'nav-below' );
-
-			else :
-
-				get_template_part( 'no-results', 'search' );
-
-			endif;
-
-			/**
-			 * generate_after_main_content hook.
-			 *
-			 * @since 0.1
-			 */
-			do_action( 'generate_after_main_content' );
-			?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-	<?php
-	/**
-	 * generate_after_primary_content_area hook.
-	 *
-	 * @since 2.0
-	 */
-	do_action( 'generate_after_primary_content_area' );
-
-	generate_construct_sidebars();
-
+<?php
 get_footer();

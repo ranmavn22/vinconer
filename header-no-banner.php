@@ -18,15 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 </head>
 <body>
 <div id="backtotop"></div>
-<div id="wrapper">
+<div id="wrapper" <?php body_class(); ?>>
     <header>
         <div class="wrapper1k2">
             <div class="logo"><?php generate_construct_logo()?></div>
             <a href="javascript:;" class="navBtn"><span></span><span></span><span></span></a>
             <a href="javascript:;" class="searchBtn icon"></a>
             <div class="searchBox">
-                <input type="text" placeholder="Nhập nội dung tìm kiếm"/>
-                <a href="javascript:;" class="submitBtn">Tìm kiếm</a>
+                <?php echo get_search_form()?>
             </div><!--end searchBox-->
         </div><!--end wrapper1k2-->
     </header><!--end header-->

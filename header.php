@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <div id="backtotop"></div>
 <div id="wrapper">
     <header>
@@ -25,8 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <a href="javascript:;" class="navBtn"><span></span><span></span><span></span></a>
             <a href="javascript:;" class="searchBtn icon"></a>
             <div class="searchBox">
-                <input type="text" placeholder="Nhập nội dung tìm kiếm"/>
-                <a href="javascript:;" class="submitBtn">Tìm kiếm</a>
+                <?php echo get_search_form()?>
             </div><!--end searchBox-->
         </div><!--end wrapper1k2-->
     </header><!--end header-->
@@ -37,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div id="primary" <?php generate_do_element_classes( 'content' ); ?>>
         <main id="main" <?php generate_do_element_classes( 'main' ); ?>>
             <div class="slide">
-                <img src="http://localhost/vinconer/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
-                <img src="http://localhost/vinconer/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
-                <img src="http://localhost/vinconer/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
+                <img src="/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
+                <img src="/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
+                <img src="/wp-content/uploads/2019/12/slide.jpg" width="1366" height="450" alt=""/>
             </div>
